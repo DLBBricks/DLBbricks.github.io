@@ -1,0 +1,111 @@
+/*
+* DLB - Brick Manufacturer Website Styles
+* Author: DLB Tech Team
+* Description: Custom styles for the DLB landing page, including hero, neomorphism cards, and animations.
+*/
+
+[x-cloak] {
+    display: none !important;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+.tamil-text {
+    font-family: 'Baloo Thambi 2', sans-serif;
+}
+
+/* Neomorphism Styles */
+.neo-card {
+    background: #ffffff;
+    box-shadow: 8px 8px 16px #d1d9e6, -8px -8px 16px #ffffff;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dark .neo-card {
+    background: #1e293b;
+    box-shadow: 8px 8px 16px #0f172a, -8px -8px 16px #334155;
+}
+
+.neo-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 12px 12px 24px #d1d9e6, -12px -12px 24px #ffffff;
+}
+
+.dark .neo-card:hover {
+    box-shadow: 12px 12px 24px #0f172a, -12px -12px 24px #334155;
+}
+
+/* Hero Background with Brick Pattern */
+.hero-bg {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/hero-dlb-bricks.png');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+/* Language Toggle Pill */
+.lang-pill {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Smooth Transitions */
+* {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Sticky Footer */
+.sticky-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+}
+
+@media (min-width: 768px) {
+    .sticky-footer {
+        display: none;
+    }
+}
+
+/* Product Badge */
+.badge {
+    /* Solid brand yellow to match chimney */
+    /* background is handled by tailwind utility classes in HTML or we can set it here if needed, 
+       but for now we remove the gradient so the inline utility can work OR we set it here. 
+       Let's set it here to be safe since it was here before. */
+    background-color: #FFD700;
+    color: #8B4513;
+    /* brick-brown text for contrast */
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.8;
+    }
+}
+
+/* Icon Animations */
+.icon-hover {
+    transition: transform 0.3s ease;
+}
+
+.icon-hover:hover {
+    transform: scale(1.1) rotate(5deg);
+}

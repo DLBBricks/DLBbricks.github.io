@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="ta" x-data="{ lang: 'ta', theme: 'light' }" :class="theme">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="DLB - Premium Quality Wire-cut & Chamber Bricks Manufacturer. Direct Factory Prices. Fast Delivery.">
+    <meta name="keywords"
+        content="bricks, wire-cut bricks, chamber bricks, fly ash bricks, brick manufacturer, construction materials">
+
+    <title
+        x-text="lang === 'ta' ? 'DLB Bricks - பிரீமியம் செங்கல் உற்பத்தியாளர்' : 'DLB Bricks - Premium Brick Manufacturer'">
+    </title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Baloo+Thambi+2:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'tamil': ['"Baloo Thambi 2"', 'sans-serif'],
+                        'sans': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'brick-red': '#C1440E',
+                        'brick-brown': '#8B4513',
+                        'brick-yellow': '#FFD700', // Matches the factory chimney
+                        'warm-cream': '#F5E6D3',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Alpine.js -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Custom Scripts & Config -->
+    <script src="js/script.js"></script>
+</head>
+
+<body class="bg-gray-50 dark:bg-slate-900 text-gray-900 dark:text-gray-100 pb-20 md:pb-0" x-cloak>
+
+    <!-- Header Section -->
+    <header class="fixed top-0 left-0 right-0 z-40 bg-white/95 dark:bg-slate-800/95 backdrop-blur-md shadow-md">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Brand Logo & Name -->
+                <div class="flex items-center gap-3">
+                    <div
+                        class="w-12 h-12 bg-gradient-to-br from-brick-red to-brick-brown rounded-lg flex items-center justify-center text-white font-bold text-xl shadow-lg">
+                        DLB
+                    </div>
+                    <div>
+                        <h1 class="text-xl font-bold text-brick-red dark:text-orange-400"
+                            x-text="lang === 'ta' ? 'DLB Bricks' : 'DLB Bricks'"></h1>
+                        <p class="text-xs text-gray-600 dark:text-gray-400"
+                            x-text="lang === 'ta' ? 'தரம் மற்றும் வலிமை' : 'Quality & Strength'"></p>
+                    </div>
+                </div>
+
+                <!-- User Controls (Theme & Language) -->
+                <div class="flex items-center gap-3">
+                    <!-- Theme Toggle -->
+                    <button @click="theme = theme === 'light' ? 'dark' : 'light'"
+                        class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-slate-700 transition-colors"
+                        aria-label="Toggle Theme">
+                        <i class="fas fa-moon text-gray-700 dark:text-yellow-400" x-show="theme === 'light'"></i>
+                        <i class="fas fa-sun text-yellow-400" x-show="theme === 'dark'"></i>
+                    </button>
+
+                    <!-- Language Selector -->
+                    <div class="lang-pill rounded-full px-4 py-2 flex items-center gap-2">
+                        <button @click="lang = 'ta'"
+                            :class="lang === 'ta' ? 'bg-brick-red text-white' : 'text-gray-700 dark:text-gray-300'"
+                            class="px-3 py-1 rounded-full text-sm font-semibold transition-all">
+                            த
+                        </button>
+                        <button @click="lang = 'en'"
+                            :class="lang === 'en' ? 'bg-brick-red text-white' : 'text-gray-700 dark:text-gray-300'"
+                            class="px-3 py-1 rounded-full text-sm font-semibold transition-all">
+                            EN
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-bg min-h-[100dvh] flex items-center justify-center relative overflow-hidden pt-20">
+        <div class="container mx-auto px-4 text-center relative z-10">
+            <!-- Main Headline -->
+            <h2 class="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight drop-shadow-2xl"
+                :class="lang === 'ta' ? 'tamil-text' : ''"
+                x-text="lang === 'ta' ? 'தரமான செங்கல், தலைமுறைக்கும் தாங்கும் வலிமை' : 'Quality Bricks, Strength that Lasts for Generations'">
+            </h2>
+
+            <!-- Sub Headline -->
+            <p class="text-xl md:text-2xl text-white/95 mb-8 font-medium drop-shadow-lg max-w-3xl mx-auto"
+                :class="lang === 'ta' ? 'tamil-text' : ''"
+                x-text="lang === 'ta' ? 'உயர்தர வயர்-கட் மற்றும் சேம்பர் செங்கல்கள்' : 'Premium Quality Wire-cut & Chamber Bricks'">
+            </p>
+
+            <!-- Call to Action -->
+            <a href="tel:+919876543210"
+                class="inline-flex items-center gap-4 bg-white text-brick-red px-10 py-5 rounded-full text-xl font-bold shadow-2xl hover:shadow-3xl hover:scale-105 transition-all duration-300 group">
+                <i class="fas fa-phone-volume text-3xl animate-pulse"></i>
+                <span x-text="lang === 'ta' ? 'இன்றைய விலையைப் பெறுங்கள்' : 'Get Quote Now'"></span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-16 md:py-24 bg-gray-50 dark:bg-slate-900">
+        <div class="container mx-auto px-4">
+            <h3 class="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-900 dark:text-white"
+                :class="lang === 'ta' ? 'tamil-text' : ''"
+                x-text="lang === 'ta' ? 'ஏன் DLB Bricks-ஐத் தேர்வு செய்ய வேண்டும்?' : 'Why Choose DLB Bricks?'">
+            </h3>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+                <!-- Feature 1: Strength -->
+                <div class="neo-card rounded-2xl p-6 text-center">
+                    <div
+                        class="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-brick-red to-brick-brown rounded-full flex items-center justify-center icon-hover">
+                        <i class="fas fa-award text-white text-2xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-2 text-gray-900 dark:text-white"
+                        :class="lang === 'ta' ? 'tamil-text' : ''"
+                        x-text="lang === 'ta' ? 'அதிக வலிமை' : 'High Strength'">
+                    </h4>
+                    <p class="text-gray-600 dark:text-gray-400"
+                        :class="lang === 'ta' ? 'tamil-text text-sm' : 'text-sm'"
+                        x-text="lang === 'ta' ? 'நீண்ட ஆயுள் கொண்ட கட்டமைப்புகளுக்கு' : 'For Long-lasting Structures'">
+                    </p>
+                </div>
+
+                <!-- Feature 2: Delivery -->
+                <div class="neo-card rounded-2xl p-6 text-center">
+                    <div
+                        class="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-green-500 to-green-700 rounded-full flex items-center justify-center icon-hover">
+                        <i class="fas fa-truck-fast text-white text-2xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-2 text-gray-900 dark:text-white"
+                        :class="lang === 'ta' ? 'tamil-text' : ''"
+                        x-text="lang === 'ta' ? 'விரைவான டெலிவரி' : 'Fast Delivery'">
+                    </h4>
+                    <p class="text-gray-600 dark:text-gray-400"
+                        :class="lang === 'ta' ? 'tamil-text text-sm' : 'text-sm'"
+                        x-text="lang === 'ta' ? '24-48 மணி நேரத்தில் விநியோகம்' : 'Delivery within 24-48 Hours'">
+                    </p>
+                </div>
+
+                <!-- Feature 3: Quality -->
+                <div class="neo-card rounded-2xl p-6 text-center">
+                    <div
+                        class="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-blue-500 to-blue-700 rounded-full flex items-center justify-center icon-hover">
+                        <i class="fas fa-clipboard-check text-white text-2xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-2 text-gray-900 dark:text-white"
+                        :class="lang === 'ta' ? 'tamil-text' : ''"
+                        x-text="lang === 'ta' ? 'தரப் பரிசோதனை செய்யப்பட்டது' : 'Quality Checked'">
+                    </h4>
+                    <p class="text-gray-600 dark:text-gray-400"
+                        :class="lang === 'ta' ? 'tamil-text text-sm' : 'text-sm'"
+                        x-text="lang === 'ta' ? '100% தர உத்தரவாதம்' : '100% Quality Guarantee'">
+                    </p>
+                </div>
+
+                <!-- Feature 4: Price -->
+                <div class="neo-card rounded-2xl p-6 text-center">
+                    <div
+                        class="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-orange-500 to-orange-700 rounded-full flex items-center justify-center icon-hover">
+                        <i class="fas fa-hand-holding-dollar text-white text-2xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-2 text-gray-900 dark:text-white"
+                        :class="lang === 'ta' ? 'tamil-text' : ''"
+                        x-text="lang === 'ta' ? 'நேரடி விலை' : 'Direct Factory Price'">
+                    </h4>
+                    <p class="text-gray-600 dark:text-gray-400"
+                        :class="lang === 'ta' ? 'tamil-text text-sm' : 'text-sm'"
+                        x-text="lang === 'ta' ? 'இடைத்தரகர் இல்லாத விலை' : 'No Middleman Cost'">
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="py-16 md:py-24 bg-white dark:bg-slate-800">
+        <div class="container mx-auto px-4">
+            <h3 class="text-3xl md:text-4xl font-bold text-center mb-4 text-gray-900 dark:text-white"
+                :class="lang === 'ta' ? 'tamil-text' : ''"
+                x-text="lang === 'ta' ? 'எங்கள் தயாரிப்புகள்' : 'Our Products'">
+            </h3>
+            <p class="text-center text-gray-600 dark:text-gray-400 mb-12 max-w-2xl mx-auto"
+                :class="lang === 'ta' ? 'tamil-text' : ''"
+                x-text="lang === 'ta' ? 'உங்கள் கட்டுமானத் தேவைகளுக்கான சிறந்த செங்கல் வகைகள்' : 'Best Brick Varieties for Your Construction Needs'">
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Product 1: Wire-cut Bricks -->
+                <div class="neo-card rounded-3xl overflow-hidden group">
+                    <div class="h-64 relative overflow-hidden">
+                        <img src="images/wire_cut_bricks_gen.png" alt="Wire-cut Bricks"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors duration-300">
+                        </div>
+                        <div class="badge absolute top-4 right-4 text-brick-brown px-3 py-1 rounded-full text-xs font-bold bg-brick-yellow shadow-lg"
+                            :class="lang === 'ta' ? 'tamil-text' : ''"
+                            x-text="lang === 'ta' ? 'மொத்த விலை கிடைக்கும்' : 'Wholesale Rate Available'">
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-2xl font-bold mb-3 text-gray-900 dark:text-white"
+                            :class="lang === 'ta' ? 'tamil-text' : ''"
+                            x-text="lang === 'ta' ? 'வயர்-கட் செங்கல்' : 'Wire-cut Bricks'">
+                        </h4>
+                        <ul class="space-y-2 mb-6">
+                            <li class="flex items-start gap-2 text-gray-700 dark:text-gray-300">
+                                <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                                <span :class="lang === 'ta' ? 'tamil-text text-sm' : 'text-sm'"
+                                    x-text="lang === 'ta' ? 'இயந்திரத்தால் வடிவமைக்கப்பட்ட துல்லியம்' : 'Machine-Molded Precision'"></span>
+                            </li>
+                            <li class="flex items-start gap-2 text-gray-700 dark:text-gray-300">
+                                <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                                <span :class="lang === 'ta' ? 'tamil-text text-sm' : 'text-sm'"
+                                    x-text="lang === 'ta' ? 'அதிக அழுத்த வலிமை' : 'High Compressive Strength'"></span>
+                            </li>
+                            <li class="flex items-start gap-2 text-gray-700 dark:text-gray-300">
+                                <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                                <span :class="lang === 'ta' ? 'tamil-text text-sm' : 'text-sm'"
+                                    x-text="lang === 'ta' ? 'குறைந்த நீர் உறிஞ்சுதல்' : 'Low Water Absorption'"></span>
+                            </li>
+                        </ul>
+                        <a href="tel:+919876543210"
+                            class="block w-full text-center bg-brick-red hover:bg-brick-brown text-white py-3 rounded-xl font-semibold transition-colors">
+                            <i class="fas fa-phone-volume mr-2"></i>
+                            <span x-text="lang === 'ta' ? 'விலை வினவுங்கள்' : 'Get Quote'"></span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product 2: Chamber Bricks -->
+                <div class="neo-card rounded-3xl overflow-hidden group">
+                    <div class="h-64 relative overflow-hidden">
+                        <img src="images/chamber_bricks_gen.png" alt="Chamber Bricks"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors duration-300">
+                        </div>
+                        <div class="badge absolute top-4 right-4 text-brick-brown px-3 py-1 rounded-full text-xs font-bold bg-brick-yellow shadow-lg"
+                            :class="lang === 'ta' ? 'tamil-text' : ''"
+                            x-text="lang === 'ta' ? 'மொத்த விலை கிடைக்கும்' : 'Wholesale Rate Available'">
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-2xl font-bold mb-3 text-gray-900 dark:text-white"
+                            :class="lang === 'ta' ? 'tamil-text' : ''"
+                            x-text="lang === 'ta' ? 'சேம்பர் செங்கல்' : 'Chamber Bricks'">
+                        </h4>
+                        <ul class="space-y-2 mb-6">
+                            <li class="flex items-start gap-2 text-gray-700 dark:text-gray-300">
+                                <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                                <span :class="lang === 'ta' ? 'tamil-text text-sm' : 'text-sm'"
+                                    x-text="lang === 'ta' ? 'இலகுவான எடை' : 'Lightweight Construction'"></span>
+                            </li>
+                            <li class="flex items-start gap-2 text-gray-700 dark:text-gray-300">
+                                <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                                <span :class="lang === 'ta' ? 'tamil-text text-sm' : 'text-sm'"
+                                    x-text="lang === 'ta' ? 'வெப்பத் தடுப்புத் திறன்' : 'Thermal Insulation'"></span>
+                            </li>
+                            <li class="flex items-start gap-2 text-gray-700 dark:text-gray-300">
+                                <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                                <span :class="lang === 'ta' ? 'tamil-text text-sm' : 'text-sm'"
+                                    x-text="lang === 'ta' ? 'சுற்றுச்சூழலுக்கு உகந்தது' : 'Eco-friendly'"></span>
+                            </li>
+                        </ul>
+                        <a href="tel:+919876543210"
+                            class="block w-full text-center bg-brick-red hover:bg-brick-brown text-white py-3 rounded-xl font-semibold transition-colors">
+                            <i class="fas fa-phone-volume mr-2"></i>
+                            <span x-text="lang === 'ta' ? 'விலை வினவுங்கள்' : 'Get Quote'"></span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product 3: Fly Ash Bricks -->
+                <div class="neo-card rounded-3xl overflow-hidden group">
+                    <div class="h-64 relative overflow-hidden">
+                        <img src="images/fly_ash_bricks_gen.png" alt="Fly Ash Bricks"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors duration-300">
+                        </div>
+                        <div class="badge absolute top-4 right-4 text-brick-brown px-3 py-1 rounded-full text-xs font-bold bg-brick-yellow shadow-lg"
+                            :class="lang === 'ta' ? 'tamil-text' : ''"
+                            x-text="lang === 'ta' ? 'மொத்த விலை கிடைக்கும்' : 'Wholesale Rate Available'">
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-2xl font-bold mb-3 text-gray-900 dark:text-white"
+                            :class="lang === 'ta' ? 'tamil-text' : ''"
+                            x-text="lang === 'ta' ? 'ஃபிளை ஆஷ் செங்கல்' : 'Fly Ash Bricks'">
+                        </h4>
+                        <ul class="space-y-2 mb-6">
+                            <li class="flex items-start gap-2 text-gray-700 dark:text-gray-300">
+                                <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                                <span :class="lang === 'ta' ? 'tamil-text text-sm' : 'text-sm'"
+                                    x-text="lang === 'ta' ? 'குறைந்த செலவு' : 'Cost-effective'"></span>
+                            </li>
+                            <li class="flex items-start gap-2 text-gray-700 dark:text-gray-300">
+                                <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                                <span :class="lang === 'ta' ? 'tamil-text text-sm' : 'text-sm'"
+                                    x-text="lang === 'ta' ? 'ஈரப்பதம் எதிர்ப்பு' : 'Moisture Resistant'"></span>
+                            </li>
+                            <li class="flex items-start gap-2 text-gray-700 dark:text-gray-300">
+                                <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                                <span :class="lang === 'ta' ? 'tamil-text text-sm' : 'text-sm'"
+                                    x-text="lang === 'ta' ? 'சீரான தரம்' : 'Consistent Quality'"></span>
+                            </li>
+                        </ul>
+                        <a href="tel:+919876543210"
+                            class="block w-full text-center bg-brick-red hover:bg-brick-brown text-white py-3 rounded-xl font-semibold transition-colors">
+                            <i class="fas fa-phone-volume mr-2"></i>
+                            <span x-text="lang === 'ta' ? 'விலை வினவுங்கள்' : 'Get Quote'"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Footer Section -->
+    <section class="py-16 md:py-24 bg-gradient-to-br from-brick-red to-brick-brown text-white">
+        <div class="container mx-auto px-4 text-center">
+            <!-- Contact Headline -->
+            <h3 class="text-3xl md:text-4xl font-bold mb-6" :class="lang === 'ta' ? 'tamil-text' : ''"
+                x-text="lang === 'ta' ? 'இன்றே தொடர்பு கொள்ளுங்கள்' : 'Contact Us Today'">
+            </h3>
+            <p class="text-xl mb-8 text-white/90 max-w-2xl mx-auto" :class="lang === 'ta' ? 'tamil-text' : ''"
+                x-text="lang === 'ta' ? 'சிறந்த விலைகள் மற்றும் விரைவான சேவைக்கு' : 'For Best Prices & Fast Service'">
+            </p>
+
+            <!-- Contact Buttons -->
+            <div class="flex flex-col md:flex-row gap-4 justify-center items-center">
+                <a href="tel:+919876543210"
+                    class="inline-flex items-center gap-3 bg-white text-brick-red px-8 py-4 rounded-full text-lg font-bold shadow-xl hover:shadow-2xl hover:scale-105 transition-all">
+                    <i class="fas fa-phone-volume"></i>
+                    <span x-text="lang === 'ta' ? 'அழைக்கவும்' : 'Call Now'"></span>
+                </a>
+
+                <a href="https://wa.me/919876543210?text=வணக்கம்,%20செங்கல்%20விலை%20வேண்டும்"
+                    class="inline-flex items-center gap-3 bg-green-500 text-white px-8 py-4 rounded-full text-lg font-bold shadow-xl hover:shadow-2xl hover:scale-105 transition-all">
+                    <i class="fab fa-whatsapp"></i>
+                    <span x-text="lang === 'ta' ? 'வாட்ஸ்அப்' : 'WhatsApp'"></span>
+                </a>
+            </div>
+
+            <!-- Address & Info -->
+            <div class="mt-12 text-white/80">
+                <p class="mb-2">
+                    <i class="fas fa-map-marker-alt mr-2"></i>
+                    <span
+                        x-text="lang === 'ta' ? 'DLB Bricks தொழிற்சாலை, தமிழ்நாடு' : 'DLB Bricks Factory, Tamil Nadu'"></span>
+                </p>
+                <p>
+                    <i class="fas fa-clock mr-2"></i>
+                    <span
+                        x-text="lang === 'ta' ? 'திங்கள் - சனி: காலை 8:00 - மாலை 6:00' : 'Mon - Sat: 8:00 AM - 6:00 PM'"></span>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Copyright Footer -->
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-gray-400" :class="lang === 'ta' ? 'tamil-text' : ''"
+                x-text="lang === 'ta' ? '© 2025 DLB Bricks. அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை.' : '© 2025 DLB Bricks. All Rights Reserved.'">
+            </p>
+            <p class="text-gray-500 text-sm mt-2" :class="lang === 'ta' ? 'tamil-text' : ''"
+                x-text="lang === 'ta' ? 'உங்கள் நம்பகமான செங்கல் உற்பத்தியாளர்' : 'Your Trusted Brick Manufacturer'">
+            </p>
+        </div>
+    </footer>
+
+    <!-- Sticky Mobile Footer -->
+    <div class="sticky-footer bg-white dark:bg-slate-800 md:hidden">
+        <div class="grid grid-cols-2 divide-x divide-gray-200 dark:divide-slate-700">
+            <a href="https://wa.me/919876543210?text=வணக்கம்,%20செங்கல்%20விலை%20வேண்டும்"
+                class="flex items-center justify-center gap-3 py-4 bg-green-500 text-white font-bold hover:bg-green-600 transition-colors">
+                <i class="fab fa-whatsapp text-2xl"></i>
+                <span x-text="lang === 'ta' ? 'வாட்ஸ்அப்' : 'WhatsApp'"></span>
+            </a>
+            <a href="tel:+919876543210"
+                class="flex items-center justify-center gap-3 py-4 bg-blue-500 text-white font-bold hover:bg-blue-600 transition-colors">
+                <i class="fas fa-phone-volume text-2xl"></i>
+                <span x-text="lang === 'ta' ? 'அழைக்கவும்' : 'Call Now'"></span>
+            </a>
+        </div>
+    </div>
+
+</body>
+
+</html>
